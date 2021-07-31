@@ -12,6 +12,6 @@ To get around this performance problem, people have come up with projects like [
 
 # `vcsh-watch`
 
-`docker-fwd`'s solution for file syncing is a daemon called `vsch-watch`. This uses `vcsh` under the hood, which is a thin wrapper around `git`, so it is git aware out of the box.
+`docker-fwd`'s solution for file syncing is a daemon called `vsch-watch`. This uses `vcsh` under the hood, which is a thin wrapper around `git`, so it is git-aware out of the box.
 
 ![Architecture Design](./design.png)
