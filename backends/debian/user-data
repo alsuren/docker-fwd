@@ -1,0 +1,17 @@
+#cloud-config
+
+packages:
+  - ssh-import-id
+  - git
+  - docker.io
+
+users:
+  - name: alsuren
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups:
+      - sudo
+      - docker
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJZfZpCZj5SBLTYnMv/4xMH0huo9b6v7sPZyy0vkIJ9Z home-mbp-2021-08-25-reinstall
+    ssh-import-id: gh:alsuren  # fails with `sudo: ssh-import-id: command not found` because user setup happens before package install.

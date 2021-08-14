@@ -1,0 +1,9 @@
+variant: fcos
+version: 1.4.0
+passwd:
+  users:
+    - name: core
+      groups:
+        - docker
+      ssh_authorized_keys:
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJZfZpCZj5SBLTYnMv/4xMH0huo9b6v7sPZyy0vkIJ9Z home-mbp-2021-08-25-reinstall
