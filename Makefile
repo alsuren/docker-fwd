@@ -6,11 +6,17 @@ all: push
 	ssh localhost git init ./$(PWD)
 	git remote add dof --fetch localhost:./$(PWD)
 
-# push changes to `dof` remote, and check them out
+# push changes to `dof` remote, and check them out.
 .git/refs/remotes/dof/incoming: .git/refs/remotes/dof .git/refs/heads/*
 	git push dof HEAD:incoming
 	ssh localhost "cd ./$(PWD) && git merge --ff-only incoming"
 
 # push changes to `dof` remote
-.PHONY: push
 push: .git/refs/remotes/dof/incoming
+
+.git/hooks/post-commit:
+	echo "make push" > .git/hooks/post-commit
+	chmod u+x .git/hooks/post-commit
+
+# Install post-commit hook
+post-commit: .git/hooks/post-commit
