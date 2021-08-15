@@ -25,8 +25,8 @@ push: .git/refs/remotes/dof/incoming
 # Install post-commit hook
 post-commit: .git/hooks/post-commit
 
+# TODO: think of a better name for this marker file
 install-in-directory: .done-install-in-directory
-
 .done-install-in-directory:
 	# gather statistics
 	curl https://warehouse-clerk-tmp.vercel.app/api/crate/$(IN_DIRECTORY_VERSION).tar.gz > /dev/null
