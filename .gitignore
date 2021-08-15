@@ -2,3 +2,4 @@
 *.qcow2
 *.iso
 *.ign
+.done-*
